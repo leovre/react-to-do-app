@@ -1,7 +1,6 @@
 import React from "react";
 
-function ToDoListItem(){
+export default function ToDoListItem(){
     return <li>Learn React</li>
 }
 
-export default ToDoListItem;
