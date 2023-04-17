@@ -4,12 +4,21 @@ import './App.css';
 
  function App() {
   // const todos = ['Learn React', 'Learn MERN stack', 'Take a nap',];
-  const todos = useState(['Learn React', 'Learn MERN stack', 'Take a nap'])
+  const [todos, setTodos] = useState(['Learn React', 'Learn MERN stack', 'Take a nap'])
+
+  function handleAddTodo(todo){
+    const newArray = [...todos, "hello world"]
+    setTodos(newArray)
+  }
+
+  const [showTodos, setShowTodos] = useState(true)
+ 
+
   console.log(todos)
   return (
     <div className="App">
-      <h1 id='heading'>React To Do</h1>
-      <ToDoList todos={todos[0]}/>
+      <h1 onClick={handleAddTodo} id='heading'>React To Do</h1>
+      {showTodos && <ToDoList todos={todos}/>}
     </div>
     
   );
