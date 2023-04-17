@@ -1,18 +1,15 @@
 import React from "react";
 import ToDoListItem from "./ToDoListItem";
-
-export default function ToDoList({todos}) {
-    const toDoListItems = todos.map(t => <ToDoListItem />);
+import "./ToDoList.css"
+function ToDoList(props) {
     return(
-        <>
-        <div className="ToDoList">
-      <h2>To Do List</h2>
+      <div className="ToDoList">
+  
      <ul>
-      {toDoListItems}
+      {props.todos.map((todo, idx) => (<ToDoListItem todo={todo}  key={idx + todo} index={idx}/>))}
      </ul>
      </div>
-     </>
      )
      }
 
-  
+  export default ToDoList

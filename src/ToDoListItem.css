@@ -1,0 +1,17 @@
+.ToDoListItem{
+ margin: 4vmin;
+    padding: 2vmin;
+    border: 1vmin solid purple;
+    list-style: none;
+    font-size: 6vmin;
+}
+
+.ToDoListItem span {
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding:1px 15px;
+    font-size:1em;
+
+}
