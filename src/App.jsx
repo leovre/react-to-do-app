@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ToDoList from './ToDoList';
+import NewToDoForm from './NewToDoForm';
 import './App.css';
 
  function App() {
@@ -10,21 +11,21 @@ import './App.css';
     'Take a nap'
   ]);
 
-  function handleAddTodo(todo){
-    const newArray = [...todos, "hello world"]
-    setTodos(newArray)
+  function handleAddTodo(newTodo){
+    setTodos((todos) => [...todos, newTodo]);
+    // const newArray = [...todos, "adding"]
+    // setTodos(newArray)
   }
 
   const [showTodos, setShowTodos] = useState(true)
  
-   
-
-  console.log(todos)
   return (
     <div className="App">
       <h1 onClick={handleAddTodo} id='heading'>React To Do</h1>
       <button onClick={() => setShowTodos(!showTodos)}>{showTodos ? 'HIDE' : 'SHOW'}</button>
       {showTodos && <ToDoList todos={todos}/>}
+      <hr />
+      <NewToDoForm handleAddTodo={handleAddTodo}/>
     </div>
     
   );
